@@ -1,0 +1,111 @@
+@import "./Utilities/Variables";
+@import "../Styles//Utilities//Mixins";
+@import "../Styles/Utilities//BreakPoints";
+
+.ParentContainer {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.navContainer {
+  width: 100%;
+  background-color: $color-secondary;
+  @include d-flex(center, start, row, 0px);
+  position: fixed;
+  z-index: 5;
+}
+
+.nav {
+  width: 90%;
+  padding: 10px 0;
+  @include d-flex(start, center, row, 0px);
+}
+
+.logoContainer {
+  width: 20%;
+  @include d-flex(space-between, center, row, 0px);
+
+  &__menuBar {
+    color: white;
+    font-size: xx-large;
+    display: none;
+    cursor: pointer;
+  }
+}
+
+.logoImg {
+  width: 80px;
+  height: 80px;
+}
+
+.mobileNavigation,
+.desktopNavigation {
+  width: 80%;
+  @include d-flex(end, center, row, 3.9%);
+}
+
+.navElement {
+  color: white;
+  text-decoration: none;
+  background-color: $color-primary;
+  padding: 10px;
+  @include d-flex(start, center, row, 5px);
+  border-radius: 4px;
+  border: 2px solid $color-primary;
+}
+
+.navElement:hover {
+  background-color: transparent;
+  border: 2px solid white;
+  transition: 1.5s;
+}
+
+.selectedNavElement {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.faAddressCard,
+.faMagnifyingGlass {
+  margin-top: 3px;
+}
+
+@include combinedMobileAndTabletScreens {
+  .nav {
+    @include d-flex(start, start, column, 20px);
+  }
+
+  .logoContainer {
+    width: 100%;
+
+    &__menuBar {
+      display: block;
+    }
+  }
+
+  .mobileNavigation,
+  .desktopNavigation {
+    padding: 30px 0px 30px 0px;
+    width: 100%;
+    @include d-flex(start, start, column, 30px);
+  }
+
+  .desktopNavigation {
+    display: none;
+  }
+
+  .navElement {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@include mediumScreen {
+  .logoContainer {
+    width: 17%;
+  }
+  .desktopNavigation {
+    width: 83%;
+    @include d-flex(space-between, center, row, 0%);
+  }
+}

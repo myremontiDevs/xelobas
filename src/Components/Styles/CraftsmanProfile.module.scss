@@ -1,0 +1,94 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer {
+  padding: 200px 0 100px 0;
+  @include d-flex(center, start, row, 0px);
+  
+}
+
+.craftsmanProfileContainer {
+  width: 90%;
+  @include d-flex(center, start, row, 0px);
+}
+
+.userCard {
+  width: 50%;
+  background-color: gray;
+  border-radius: 8px;
+  padding: 20px;
+
+  &__userImgContainer {
+    height: 300px;
+    @include d-flex(center, start, row, 0px);
+
+    &__userImg {
+      width: 60%;
+      height: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  &__contact {
+    @include d-flex(center, center, row, 10px);
+    padding: 10px;
+    &__phone {
+      width: 30px;
+      height: 30px;
+      background-color: green;
+      border-radius: 50%;
+      @include d-flex(center, center, row, 10px);
+    }
+  }
+}
+
+.info {
+  border: 3px solid $color-primary;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+
+  &__key {
+    background-color: $color-primary;
+    padding: 5px;
+  }
+
+  &__value {
+    padding: 5px;
+  }
+}
+
+.faCircleCheck {
+  color: green;
+  margin-top: 5px;
+}
+
+.faCircleXmark {
+  color: red;
+}
+
+.faPhone {
+  color: white;
+}
+
+.faSquareWhatsapp {
+  font-size: 33px;
+  color: #00d757;
+}
+
+@include combinedMobileAndTabletScreens {
+  .parentContainer {
+    padding: 70px 0 100px 0;
+  }
+
+  .userCard {
+    width: 100%;
+  }
+
+  .userCard__userImgContainer__userImg {
+    width: 90%;
+  }
+}
+

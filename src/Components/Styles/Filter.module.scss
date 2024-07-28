@@ -1,0 +1,86 @@
+
+@import "./Utilities/Variables";
+@import "../Styles//Utilities//Mixins";
+@import "../Styles/Utilities//BreakPoints";
+
+.ParentContainer{
+    width: 100%;
+  background-color: $color-secondary;
+  @include d-flex(center, start, row, 0px);
+  padding-top: 95px;
+position: fixed;
+z-index: 4;
+}
+
+.filter{
+    width: 90%;
+    padding: 10px 0;
+    @include d-flex(space-between, start, row, 30px);
+   
+
+    &__button{
+      width: 10%;
+      height: 40px;
+      background-color: #A34343;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      color: white;
+    }
+}
+
+.selectContainer{
+  width: 30%;
+
+  &__select{
+   width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+  }
+
+  &__select:focus{
+outline: none;
+  }
+}
+
+
+@include combinedMobileAndTabletScreens{
+  .ParentContainer{
+  padding-top: 105px;
+position: static;
+}
+
+  .filter{
+   flex-direction: column;
+
+   &__button{
+    width: 100%;
+   }
+  }
+
+  .selectContainer{
+    width: 100%;
+  }
+}
+
+@include mediumScreen{
+
+  .ParentContainer{
+
+  position: static;
+  }
+
+  .filter{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__button{
+      width: 100%;
+     }
+  }
+
+  .selectContainer{
+    width: 100%;
+  }
+}

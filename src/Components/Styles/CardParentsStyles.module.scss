@@ -1,0 +1,54 @@
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer, .parent{
+@include d-flex(center, start, row, 0px);
+}
+
+.parentContainer{
+    padding: 200px 0 100px 0;
+}
+
+.parent{
+    padding-top: 50px;
+}
+
+.craftsmanContainer{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.emptyResult{
+    width: 90%;
+    text-align: center;
+    padding-top: 100px;
+}
+
+
+@include combinedMobileAndTabletScreens {
+
+    .parentContainer{
+        padding: 70px 0 100px 0;
+    }
+
+    .craftsmanContainer{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .emptyResult{
+        padding-top: 50px;
+    }
+    
+}
+
+@include mediumScreen {
+    .parentContainer{
+        padding: 70px 0 100px 0;
+    }
+
+    .craftsmanContainer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

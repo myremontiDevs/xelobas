@@ -1,0 +1,150 @@
+@import "./Utilities/Variables";
+@import "../Styles//Utilities//Mixins";
+@import "../Styles/Utilities//BreakPoints";
+
+.parentContainer{
+    @include d-flex(center, start, row, 0px);
+}
+
+.mainContainer{
+    width: 90%;
+    padding: 20px;
+    background-color: $color-primary;
+    border-radius: 8px;
+}
+
+.searchContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+
+}
+
+
+.inputContainer{
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.select, .input{
+    height: 50px;
+    border-radius: 8px;
+    // border: none;
+    border: 2px solid $color-primary;
+}
+
+.select{
+    width: 100%;
+}
+
+.input{
+    width: 50%;
+    padding-left: 12px;
+    padding-top: 10px;
+}
+
+.inputError{
+    border: 2px solid crimson;
+    background-color:#FEBBCC;
+  }
+
+.label{
+    position: absolute;
+    font-size: small;
+    top:-50%;
+    color: white;
+}
+
+.rangeTextFrom, .moveRangeTextFrom, .rangeTextUpTo, .moveRangeTextUpTo{
+    position: absolute;
+    color: gray;
+}
+
+.rangeTextFrom{
+    left: 4%;
+   top: 25%;
+}
+
+.moveRangeTextFrom{
+    left: 4%;
+    top: 5%;
+    font-size: small;
+}
+
+.rangeTextUpTo{
+    left: 57%;
+    top: 25%;
+}
+
+.moveRangeTextUpTo{
+    left: 57%;
+    top: 5%;
+    font-size: small;
+}
+
+.select:focus, .input:focus{
+    outline: none;
+      }
+
+
+
+      .buttonContainer{
+        @include d-flex(end, start, row, 0px);
+padding-top: 30px;
+
+        &__btn{
+            width: 30.5%;
+            height: 40px;
+            background-color:#BFBFBF;
+            border: 2px solid #BFBFBF;
+            border-radius: 8px;
+            color: white;
+            font-size: large;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        &__btn:hover{
+            background-color: transparent;
+            color: #BFBFBF;
+            transition: 1.5s;
+        }
+      }
+
+     
+
+
+      @include combinedMobileAndTabletScreens{
+        .searchContainer{
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+        }
+
+        .buttonContainer__btn{
+            width: 100%;
+        }
+      }
+
+
+      @include mediumScreen{
+        .searchContainer{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .buttonContainer__btn{
+            width: 48%;
+        }
+      }
+
+      @include largeScreen{
+        .searchContainer{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .buttonContainer__btn{
+            width: 48%;
+        }
+      }

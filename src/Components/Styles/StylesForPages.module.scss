@@ -1,0 +1,29 @@
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer {
+  width: 100%;
+  min-height: 100vh;
+  @include d-flex(center, start, row, 0px);
+  padding: 200px 0 100px 0;
+}
+
+.pageContainer {
+  width: 90%;
+}
+
+.mainContainer {
+  width: 100%;
+}
+
+@include combinedMobileAndTabletScreens {
+  .parentContainer {
+    padding: 70px 0 100px 0;
+  }
+}
+
+@include mediumScreen {
+  .parentContainer {
+    padding: 70px 0 100px 0;
+  }
+}

@@ -1,0 +1,131 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer {
+  min-height: 100vh;
+  padding-top: 260px;
+  @include d-flex(center, start, row, 0px);
+  background-color: $color-primary;
+}
+
+.mainContainer {
+  width: 90%;
+  @include d-flex(start, center, column, 20px);
+}
+
+.header {
+  color: white;
+  letter-spacing: 4px;
+}
+
+.authorization {
+  width: 25%;
+
+  &__labelContainer {
+    color: gray;
+    font-size: small;
+    padding:20px 0 5px 0;
+  }
+
+  &__input, &__button, &__disabledButton {
+    width: 100%;
+    height: 42px;
+    border-radius: 4px;
+    border: none;
+  }
+
+  &__input{
+    background-color: #e8f0fe;
+    padding: 5px;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  &__relativeBox{
+    background-color: #159895;
+    position: relative;
+  }
+
+  &__errorMessage{
+    color: crimson;
+    padding-top: 5px;
+    font-size: small;
+  }
+
+  &__button, &__disabledButton{
+    letter-spacing: 2px;
+    font-size: 18.5px;
+      margin-top: 20px;
+  }
+
+  &__button{
+   background-color: #159895;
+   border: 2px solid #159895;
+   color: white;
+  cursor: pointer;
+  }
+
+  &__button:hover{
+    background-color: transparent;
+    border: 2px solid white;
+    transition: 1.5s;
+  }
+
+  &__disabledButton{
+    background-color: #92A9BD;
+  cursor: no-drop;
+  }
+}
+
+.faEye{
+  color: $color-primary;
+  position: absolute;
+  left: 92%;
+  top: 28%;
+  cursor: pointer;
+}
+
+
+@include mobileScreen {
+
+  .parentContainer {
+    padding: 0;
+    @include d-flex(center, center, row, 0px);
+  }
+  
+  .authorization {
+    width: 100%;
+  }
+}
+
+@include tabletScreen {
+
+  .parentContainer {
+    padding: 0;
+    @include d-flex(center, center, row, 0px);
+  }
+
+  .authorization {
+    width: 70%;
+  }
+}
+
+@include mediumScreen {
+
+  .parentContainer {
+    padding-top: 100px;
+  }
+
+  .authorization {
+    width: 40%;
+  }
+}
+
+@include largeScreen {
+  .authorization {
+    width: 30%;
+  }
+}

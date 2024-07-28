@@ -1,0 +1,96 @@
+@import "./Utilities/Variables";
+@import "./Utilities//Mixins";
+@import "./Utilities//BreakPoints";
+
+.parentContainer{
+    width: 100%;
+    background-color: $color-secondary;
+    padding: 20px 0px;
+}
+
+.mainContainer{
+    @include d-flex(center, start, row, 0px);
+}
+
+.footer{
+    width: 90%;
+    padding: 20px 0px;
+    @include d-flex(start, start, row, 20px);
+    color: white;
+
+    &__leftSide{
+        width: 50%;
+       
+
+        &__aboutUs{
+            padding: 35px 100px 20px 0;
+        }
+    }
+
+    &__rightSide{
+        width: 50%;
+        padding-left: 100px;
+
+        &__location{
+            padding-bottom: 15px;
+        }
+
+        &__location, &__contact{
+            font-size: 18px;
+        }
+
+        &__socialNetworks{
+            padding-top: 15px;
+            font-size: 35px;
+            @include d-flex(start, start, row, 30px);
+        }
+    }
+}
+.creators{
+    text-align: center;
+    color: white;
+}
+
+.faLocationDot{
+    padding-right: 10px
+}
+
+.faSquarePhone{
+    padding-right: 13px
+}
+
+@include combinedMobileAndTabletScreens {
+  
+    .footer{
+        @include d-flex(start, start, column, 20px);
+
+        &__leftSide{
+            width: 100%;
+           
+            &__aboutUs{
+                padding: 15px 0 20px 0;
+            }
+        }
+
+        &__rightSide{
+            width: 100%;
+            padding-left: 0;
+
+            &__location, &__contact{
+                font-size: medium;
+            }
+        }
+
+        
+    }
+}
+
+@include mediumScreen {
+    .footer__leftSide__aboutUs{
+        padding: 10px 0 20px 0;
+    }
+
+    .footer__rightSide{
+        padding-left: 0;
+    }
+}
